@@ -30,7 +30,7 @@ This project demonstrates a small enterprise-style network using **Cisco Packet 
 | **R2** | G0/0 | 192.168.40.1 | 255.255.255.0 | VLAN 40 GW |
 | | S0/3/0 | 10.0.0.2 | 255.255.255.252 | WAN to R1 |
 | **S1** | VLAN 10 | 192.168.10.2 | 255.255.255.0 | Optional Mgmt. |
-| | **S1** | VLAN 20 | 192.168.20.2 | 255.255.255.0 | Optional Mgmt. |
+| **S1** | VLAN 20 | 192.168.20.2 | 255.255.255.0 | Optional Mgmt. |
 | **S2** | VLAN 30 | 192.168.30.2 | 255.255.255.0 | Optional Mgmt. |
 | **S3** | VLAN 40 | 192.168.40.2 | 255.255.255.0 | Optional Mgmt. |
 | **PC1-2** | Fa0 | 192.168.10.x | 255.255.255.0 | VLAN 10 HR |
@@ -116,5 +116,6 @@ R1(config-if)# ip access-group 100 in
 ---
 
 ## Author
+
 
 Created by Abdulmohaimen – part of CCNA hands-on learning.
