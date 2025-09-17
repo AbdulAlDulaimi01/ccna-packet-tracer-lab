@@ -15,7 +15,7 @@ This project demonstrates a small enterprise-style network using **Cisco Packet 
   
 
 ## 📷 Topology
-Topology.png
+![Network Topology](Diagrams/topology.png)
 
 ---
 
@@ -119,4 +119,5 @@ R1(config-if)# ip access-group 100 in
 
 
 Created by Abdulmohaimen – part of CCNA hands-on learning.
+
 
