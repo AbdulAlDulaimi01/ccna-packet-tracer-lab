@@ -1,0 +1,51 @@
+!
+hostname R1
+!
+no ip domain-lookup
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.99
+ip dhcp excluded-address 192.168.20.1 192.168.20.99
+ip dhcp excluded-address 192.168.30.1 192.168.30.99
+!
+ip dhcp pool VLAN10
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 8.8.8.8
+!
+ip dhcp pool VLAN20
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 8.8.8.8
+!
+ip dhcp pool VLAN30
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ dns-server 8.8.8.8
+!
+interface GigabitEthernet0/0
+ no ip address
+!
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip access-group 100 in
+!
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+!
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+ ip access-group 110 in
+!
+interface Serial0/3/0
+ ip address 10.0.0.1 255.255.255.252
+ clock rate 64000
+!
+ip route 192.168.40.0 255.255.255.0 10.0.0.2
+!
+access-list 110 deny ip 192.168.30.0 0.0.0.255 192.168.10.0 0.0.0.255
+access-list 110 permit ip any any
+!
+end
